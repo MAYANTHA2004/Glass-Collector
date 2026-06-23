@@ -1,0 +1,38 @@
+name: glass_collector_app
+description: "Waste glass collection app - route, scan, collect, report."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # HTTP calls to the .NET backend
+  http: ^1.2.1
+
+  # Barcode scanning (Code128) using the device camera
+  mobile_scanner: ^5.2.3
+
+  # Local offline-first storage for collection records
+  sqflite: ^2.3.3
+  path: ^1.9.0
+
+  # State management (simple, lightweight)
+  provider: ^6.1.2
+
+  # Connectivity check before attempting sync
+  connectivity_plus: ^6.0.5
+
+  cupertino_icons: ^1.0.8
+  dartx: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
