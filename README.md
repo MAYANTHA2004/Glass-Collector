@@ -183,36 +183,49 @@ Output: `flutter_app/build/app/outputs/flutter-apk/app-release.apk`
 
 ## 5. Project structure reference
 
-```
 backend/GlassCollector.Api/
 ├── Controllers/
-│   ├── TripsController.cs        # Screen 1 + Screen 3 endpoints
-│   ├── CollectionsController.cs  # Screen 2 verify/submit + sync
-│   └── SuppliersController.cs    # debug/listing endpoint
-├── Models/                       # Supplier, Trip, TripStop, StopStatus
-├── Dtos/Dtos.cs                  # all request/response shapes
-├── Services/RouteOptimizer.cs    # Haversine + Dijkstra route logic
+│   ├── TripsController.cs
+│   ├── SuppliersController.cs
+│   └── CollectionsController.cs
+├── Models/
+│   ├── TripStop.cs
+│   ├── Supplier.cs
+│   └── CollectionRecord.cs
+├── Services/
+│   ├── RouteOptimiserService.cs
+│   └── CollectionService.cs
 ├── Data/
-│   ├── GlassCollectorDbContext.cs
-│   └── DbSeeder.cs               # 5 sample suppliers
+│   └── AppDbContext.cs
+├── Migrations/                         ← keep if using EF Core
+├── appsettings.json
+├── appsettings.Development.json
 ├── Program.cs
-└── appsettings.json
+├── GlassCollector.Api.csproj
+└── .gitignore
 
-flutter_app/lib/
-├── main.dart
-├── models/
-│   ├── trip_stop.dart
-│   └── collection_record.dart
-├── services/
-│   ├── api_config.dart           # <- set your hosted backend URL here
-│   ├── api_service.dart          # all HTTP calls
-│   ├── local_database.dart       # offline-first sqflite storage
-│   └── trip_session.dart         # shared state across the 3 screens
-└── screens/
-    ├── trip_sequence_screen.dart  # Screen 1
-    ├── scan_collect_screen.dart   # Screen 2
-    └── trip_report_screen.dart    # Screen 3
-```
+flutter_app/
+├── lib/
+│   ├── main.dart
+│   ├── models/
+│   │   ├── trip_stop.dart
+│   │   └── collection_record.dart
+│   ├── screens/
+│   │   ├── trip_sequence_screen.dart
+│   │   ├── scan_collect_screen.dart
+│   │   └── trip_report_screen.dart
+│   └── services/
+│       ├── api_config.dart
+│       ├── api_service.dart
+│       ├── local_database.dart
+│       ├── trip_session.dart
+│       └── location_service.dart       ← new file you added
+├── android/
+│   └── app/src/main/
+│       └── AndroidManifest.xml
+├── pubspec.yaml
+├── pubspec.lock
+└── .gitignore
 
 ---
 
