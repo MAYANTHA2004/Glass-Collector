@@ -123,7 +123,7 @@ class _SummaryHeader extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-      color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.4),
+      color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.4),
       child: Row(
         children: [
           Expanded(
@@ -133,7 +133,7 @@ class _SummaryHeader extends StatelessWidget {
               value: '${trip.totalDistanceKm.toStringAsFixed(1)} km',
             ),
           ),
-          Container(width: 1, height: 40, color: Colors.grey.withOpacity(0.3)),
+          Container(width: 1, height: 40, color: Colors.grey.withValues(alpha: 0.3)),
           Expanded(
             child: _StatBlock(
               icon: Icons.flag,
@@ -198,7 +198,7 @@ class _StopTile extends StatelessWidget {
 
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: color.withOpacity(0.15),
+        backgroundColor: color.withValues(alpha: 0.15),
         child: Text(
           '${stop.sequenceNumber}',
           style: TextStyle(color: color, fontWeight: FontWeight.bold),

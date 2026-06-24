@@ -207,9 +207,9 @@ class _ScanCollectScreenState extends State<ScanCollectScreen> {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.red.withOpacity(0.08),
+              color: Colors.red.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.red.withOpacity(0.3)),
+              border: Border.all(color: Colors.red.withValues(alpha: 0.3)),
             ),
             child: Row(
               children: [
@@ -233,7 +233,7 @@ class _ScanCollectScreenState extends State<ScanCollectScreen> {
         Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: Colors.green.withOpacity(0.1),
+            color: Colors.green.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: const Row(
@@ -266,7 +266,7 @@ class _ScanCollectScreenState extends State<ScanCollectScreen> {
         ),
         const SizedBox(height: 12),
         DropdownButtonFormField<String>(
-          value: _condition,
+          initialValue: _condition,
           decoration: const InputDecoration(labelText: 'Condition', border: OutlineInputBorder()),
           items: const [
             DropdownMenuItem(value: 'Good', child: Text('Good')),
@@ -299,7 +299,7 @@ class _DestinationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.35),
+      color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.35),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
